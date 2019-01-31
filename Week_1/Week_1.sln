@@ -1,0 +1,35 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task1", "Task1\Task1.csproj", "{F5827AAD-2AA3-4B1D-8517-C9FCF10094B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task2", "Task2\Task2.csproj", "{5E4E33A6-21A8-4FA7-B54E-5A90E922290E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task3", "Task3\Task3.csproj", "{0730D732-4A04-42D7-AA85-5CA5654C91EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task4", "Task4\Task4.csproj", "{AA89DEDD-BE3A-4A6D-8A6B-4D90207159CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5827AAD-2AA3-4B1D-8517-C9FCF10094B0}.Debug|x86.ActiveCfg = Debug|x86
+		{F5827AAD-2AA3-4B1D-8517-C9FCF10094B0}.Debug|x86.Build.0 = Debug|x86
+		{F5827AAD-2AA3-4B1D-8517-C9FCF10094B0}.Release|x86.ActiveCfg = Release|x86
+		{F5827AAD-2AA3-4B1D-8517-C9FCF10094B0}.Release|x86.Build.0 = Release|x86
+		{5E4E33A6-21A8-4FA7-B54E-5A90E922290E}.Debug|x86.ActiveCfg = Debug|x86
+		{5E4E33A6-21A8-4FA7-B54E-5A90E922290E}.Debug|x86.Build.0 = Debug|x86
+		{5E4E33A6-21A8-4FA7-B54E-5A90E922290E}.Release|x86.ActiveCfg = Release|x86
+		{5E4E33A6-21A8-4FA7-B54E-5A90E922290E}.Release|x86.Build.0 = Release|x86
+		{0730D732-4A04-42D7-AA85-5CA5654C91EA}.Debug|x86.ActiveCfg = Debug|x86
+		{0730D732-4A04-42D7-AA85-5CA5654C91EA}.Debug|x86.Build.0 = Debug|x86
+		{0730D732-4A04-42D7-AA85-5CA5654C91EA}.Release|x86.ActiveCfg = Release|x86
+		{0730D732-4A04-42D7-AA85-5CA5654C91EA}.Release|x86.Build.0 = Release|x86
+		{AA89DEDD-BE3A-4A6D-8A6B-4D90207159CD}.Debug|x86.ActiveCfg = Debug|x86
+		{AA89DEDD-BE3A-4A6D-8A6B-4D90207159CD}.Debug|x86.Build.0 = Debug|x86
+		{AA89DEDD-BE3A-4A6D-8A6B-4D90207159CD}.Release|x86.ActiveCfg = Release|x86
+		{AA89DEDD-BE3A-4A6D-8A6B-4D90207159CD}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal
