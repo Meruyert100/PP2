@@ -6,7 +6,7 @@ namespace Task2
     {
         public string name;//creating variable string
         public string id;//creating variable string
-        public int year;//creating variable int
+
        
         public Student(string name, string id)//constructor with two parameters
         {
