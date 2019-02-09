@@ -6,7 +6,7 @@ namespace Task4
     {
         public static void Main(string[] args)
         {
-            string pathstring = "c:/Users/meruyerttastandiyeva/Desktop";
+            string pathstring = "/Users/meruyerttastandiyeva/Desktop";
             string targetstring = "/Users/meruyerttastandiyeva/Documents";
             string filename = "newfile.txt";
             pathstring = Path.Combine(pathstring, filename);
@@ -18,7 +18,7 @@ namespace Task4
 
             try
             {
-                File.Delete(@"c:/Users/meruyerttastandiyeva/Desktop/newfile.txt");
+                File.Delete("/Users/meruyerttastandiyeva/Desktop/newfile.txt");
             }
             catch (IOException e)
             {

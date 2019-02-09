@@ -14,7 +14,7 @@ namespace Task2
                     return false;
             return true;
         }
-        static bool isNotFour(int n)
+        static bool isNotZero(int n)
         {
             return n != 0;
         }
@@ -43,7 +43,7 @@ namespace Task2
                 }
             }
             
-            primes = Array.FindAll(primes, isNotFour).ToArray();
+            primes = Array.FindAll(primes, isNotZero).ToArray();
 
             File.WriteAllText("/Users/meruyerttastandiyeva/Desktop/FileQ/bye.txt", string.Join(" ", primes));
 
