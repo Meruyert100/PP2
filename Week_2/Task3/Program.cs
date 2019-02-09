@@ -7,17 +7,13 @@ class Program
     {
         ShowAllFoldersUnder("/Users/meruyerttastandiyeva/Documents", 0);
     }
-    private static void ShowAllFoldersUnder(string path, int indent)
+    private static void ShowAllFoldersUnder(string path, int index)
     {
-        try
-        {
             foreach (string folder in Directory.GetDirectories(path))
             {
-                Console.WriteLine("{0}{1}", new string(' ', indent), Path.GetFileName(folder));
-                ShowAllFoldersUnder(folder, indent + 2);
+                Console.WriteLine("{0}{1}", new string(' ', index), Path.GetFileName(folder));
+                ShowAllFoldersUnder(folder, index + 2);
             }
-        }
-        catch (UnauthorizedAccessException) { }
     }
 
 }
