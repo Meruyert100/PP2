@@ -10,17 +10,17 @@ namespace Task2
     }
     class Layer// create a class
     {
-        public DirectoryInfo[] DirectoryContent
+        public DirectoryInfo[] DirectoryContent//property declaration
         {
             get;
             set;
         }
-        public FileInfo[] FileContent
+        public FileInfo[] FileContent//property declaration
         {
             get;
             set;
         }
-        public int SelectedIndex
+        public int SelectedIndex//property declaration
         {
             get;
             set;
@@ -97,19 +97,18 @@ namespace Task2
                                 SelectedIndex = 0
                             });
                         }
-                        else
+                        else//if it is a textfile we enter to it
                         {
                             curMode = FSIMode.File;
-                            using (FileStream fs = new FileStream(history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].FullName, FileMode.Open, FileAccess.Read))
+                            using (FileStream fs = new FileStream(history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].FullName, FileMode.Open, FileAccess.Read))//open a textfile to read from it
                             {
-                                using (StreamReader sr = new StreamReader(fs))
+                                using (StreamReader sr = new StreamReader(fs))//create a stream reader and link it to the file stream
                                 {
                                     Console.BackgroundColor = ConsoleColor.White;
                                     Console.ForegroundColor = ConsoleColor.Black;
                                     Console.Clear();
-                                    Console.WriteLine(sr.ReadToEnd());
-
-                                }
+                                    Console.WriteLine(sr.ReadToEnd());//read all the data from textfile and display it
+                                 }//"using" statement closes the stream
                             }
 
                         }
@@ -118,7 +117,7 @@ namespace Task2
                         if (curMode == FSIMode.DirectoryInfo)
                         {
                             if (history.Count > 1)
-                                history.Pop();
+                                history.Pop();//removes and returns the object at the top of the stack
                         }
                         else
                         {
@@ -133,11 +132,11 @@ namespace Task2
                         index = history.Peek().SelectedIndex;
                         int ind = index;
                         if (index < history.Peek().DirectoryContent.Length)
-                            history.Peek().DirectoryContent[index].Delete(true);
+                            history.Peek().DirectoryContent[index].Delete(true);//delete a directory
                         else
-                            history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].Delete();
+                            history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].Delete();//delete a file
                         int numofcontent = history.Peek().DirectoryContent.Length + history.Peek().FileContent.Length - 2;
-                        history.Pop();
+                        history.Pop();//removes and returns the object at the top of the stack
                         if (history.Count == 0)
                         {
                             Layer nl = new Layer
@@ -158,7 +157,7 @@ namespace Task2
                                 FileContent = di.GetFiles(),
                                 SelectedIndex = Math.Min(Math.Max(numofcontent, 0), ind)
                             };
-                            history.Push(nl);
+                            history.Push(nl);//insert an element at the top of the stack
                         }
                         break;
                     case ConsoleKey.A:
@@ -189,14 +188,14 @@ namespace Task2
                         Console.WriteLine(selectedMode);
                         if (selectedMode == 1)
                         {
-                            new DirectoryInfo(history.Peek().DirectoryContent[index].FullName).MoveTo(fullname + newname);
+                            new DirectoryInfo(history.Peek().DirectoryContent[index].FullName).MoveTo(fullname + newname);//renames a directory
                         }
                         else
-                            new FileInfo(history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].FullName).MoveTo(fullname + newname);
+                            new FileInfo(history.Peek().FileContent[index - history.Peek().DirectoryContent.Length].FullName).MoveTo(fullname + newname);//renames a file
                         index = history.Peek().SelectedIndex;
                         ind = index;
                         numofcontent = history.Peek().DirectoryContent.Length + history.Peek().FileContent.Length - 1;
-                        history.Pop();
+                        history.Pop();//removes and returns the object at the top of the stack
                         if (history.Count == 0)
                         {
                             Layer nl = new Layer
