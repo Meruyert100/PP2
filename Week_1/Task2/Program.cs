@@ -44,10 +44,10 @@ namespace Task2
     {
         public static void Main(string[] args)
         {
-            Student s = new Student("NAME", "18110230");//create a class Student
+            Student s = new Student("NAME", "18110230");//object creation and constructor call
             Console.WriteLine(s.get_name());//output name
             Console.WriteLine(s.get_id());//output id
-            Console.WriteLine(s.Get_year(2018));//output year of study
+            Console.WriteLine(s.Get_year(2018));//output incremented year of study
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Task4
             {
                 for (int j = 0; j < i; j++)//we pass through columns of array
                 {
-                    Console.Write("[*] ");//output "[*]"
+                    Console.Write("[*]");//output "[*]"
                 }
                 Console.WriteLine();//new line
             }
