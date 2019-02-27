@@ -145,7 +145,7 @@ namespace Task2
                                 FileContent = dir.GetFiles(),
                                 SelectedIndex = Math.Min(Math.Max(numofcontent, 0), ind)
                             };
-                            history.Push(nl);
+                            history.Push(nl);//insert an element at the top of the stack
                         }
                         else
                         {
