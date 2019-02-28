@@ -94,20 +94,23 @@ namespace Task2
             List<Mark> marks = new List<Mark>();
             marks.Add(m);
             marks.Add(m2);
+            Ser(marks);
+            Deser();
+
+        }
+        static void Ser(List<Mark> c)
+        {
             FileStream fs = new FileStream("marks.xml", FileMode.Create, FileAccess.Write);
-                XmlSerializer xs = new XmlSerializer(typeof(List<Mark>));
-                xs.Serialize(fs, marks);
-                fs.Close();
-                
-
-             /* FileStream fs = new FileStream("marks.xml", FileMode.Open, FileAccess.Read);
-             XmlSerializer xs = new XmlSerializer(typeof(List<Mark>));
-
-
-             Mark t = xs.Deserialize(fs) as Mark;
-
-             fs.Close();*/
-
+            XmlSerializer xs = new XmlSerializer(typeof(List<Mark>));
+            xs.Serialize(fs, c);
+            fs.Close();
+        }
+        static void Deser()
+        {
+            FileStream fs = new FileStream("marks.xml", FileMode.Open, FileAccess.Read);
+            XmlSerializer xs = new XmlSerializer(typeof(List<Mark>));
+            List<Mark> t = xs.Deserialize(fs) as List<Mark>;
+            fs.Close();
         }
     }
 }
