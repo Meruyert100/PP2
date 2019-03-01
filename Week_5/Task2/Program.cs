@@ -110,6 +110,8 @@ namespace Task2
             FileStream fs = new FileStream("marks.xml", FileMode.Open, FileAccess.Read);
             XmlSerializer xs = new XmlSerializer(typeof(List<Mark>));
             List<Mark> t = xs.Deserialize(fs) as List<Mark>;
+            foreach (Mark i in t)
+                Console.WriteLine(i.ToString());
             fs.Close();
         }
     }
