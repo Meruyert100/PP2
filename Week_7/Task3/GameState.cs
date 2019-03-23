@@ -10,17 +10,19 @@ using System.Xml.Serialization;
 
 namespace Snake
 {
+
     public class GameState
     {
         System.Timers.Timer timer = new System.Timers.Timer(120);
         const int height = 20;
         const int width = 40;
-        public Worm worm = new Worm('O');
-        public Food food = new Food('@');
+        public Worm worm = new Worm('*');
+        public Food food = new Food('A');
         public Wall wall = new Wall('#');
-        string name;
-        int score = 5;
-        int degree = 1;
+
+        public string name;
+        public int score = 0;
+        public int degree = 1;
         string file = "/Users/meruyerttastandiyeva/Desktop/FileQ/hello.txt";
         public ConsoleKeyInfo keypress = new ConsoleKeyInfo();
         public void Run()
@@ -54,7 +56,7 @@ namespace Snake
         public void ShowBanner()
         {
             Console.SetWindowSize(width, height + 6);
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.CursorVisible = false;
             Console.WriteLine("||----------------------------------------------------------------------------||");
             Console.WriteLine("||----------------------------Welcome to Snake Game---------------------------||");
@@ -113,25 +115,8 @@ namespace Snake
             Console.WriteLine("Level: " + degree);
 
         }
-        public void CheckFood()
-        {
-            if (worm.IsIntersected(food.body))
-            {
-                score++;
-                if (score == 2)
-                {
-                    degree++;
-                }
-                if (score == 5)
-                {
-                    degree++;
-                }
-                worm.Eat(food.body);
-                food.GenerateLocation(worm.body, wall.body);
-                food.Draw();
-            }
 
-        }
+
         public void ProcessKeyEvent(ConsoleKeyInfo consoleKeyInfo)
         {
             switch (consoleKeyInfo.Key)
@@ -171,7 +156,7 @@ namespace Snake
         }
 
 
-        private void CheckCollision()
+        public void CheckCollision()
         {
             if (worm.IsIntersected(wall.body) || worm.CheckWall())
             {
@@ -184,8 +169,18 @@ namespace Snake
             else if (worm.IsIntersected(food.body))
             {
                 score++;
+                if (score == 2)
+                {
+                    degree++;
+                }
+                if (score == 5)
+                {
+                    degree++;
+                }
                 Console.SetCursorPosition(41, 1);
                 Console.WriteLine("Your score: " + score);
+                Console.SetCursorPosition(41, 2);
+                Console.WriteLine("Level: " + degree);
                 worm.Eat(food.body);
                 Thread.Sleep(200 - score);
                 food.GenerateLocation(worm.body, wall.body);

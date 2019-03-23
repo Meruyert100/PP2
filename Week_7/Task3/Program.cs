@@ -21,6 +21,7 @@ namespace Snake
             game.Run();
             while (!gameover)
             {
+
                 ConsoleKeyInfo consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.Key == ConsoleKey.K)
                 {

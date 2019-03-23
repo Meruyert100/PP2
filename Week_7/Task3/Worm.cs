@@ -70,7 +70,6 @@ namespace Snake
 
         }
 
-
         public void Eat(List<Point> body)
         {
             this.body.Add(new Point(body[0].X, body[0].Y));
